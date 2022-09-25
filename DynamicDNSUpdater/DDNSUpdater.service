@@ -1,0 +1,16 @@
+[Unit]
+Description = Automatic Cloud DNS Record Updater. Checks for change in your Dynamic IP Address every hour, if it is changed, then publishes your changed record to Cloud Flare.
+After = network.target # Assuming you want to start after network interfaces are made available
+
+[Service]
+Type = simple
+ExecStart = python main.py
+User = # User to run the script as
+Group = # Group to run the script as
+Restart = on-failure # Restart when there are errors
+SyslogIdentifier = DDNSUpdater
+RestartSec = 5
+TimeoutStartSec = infinity
+
+[Install]
+WantedBy = multi-user.target # Make it accessible to other users
