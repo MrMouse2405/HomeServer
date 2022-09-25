@@ -64,5 +64,3 @@ while True:
         publish_public_ip(CurrentPublicIP)
 
     time.sleep(3600)
-
-    break
