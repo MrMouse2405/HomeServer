@@ -1,7 +1,7 @@
 package main
 
 import (
-	"io"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -10,7 +10,7 @@ func LookUpIP() string {
 	if err != nil {
 		return "Request Failed"
 	}
-	body, err := io.ReadAll(resp.Body)
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return "Request Failed"
 	}
