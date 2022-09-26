@@ -11,7 +11,7 @@ var RandomQuotes = []string{
 	"If my daughter is half Asian and half white and Luke is white, what will be the ratio of ethnicity of their children be?",
 	"Edward, Tristian, and Abdul are strong students. They dont need univeristy, university needs them.",
 	"I have a Asian Wife and a Dog",
-	"Universities Scroll down to application list until they find last names starting from W, and start accepting from there."
+	"Universities Scroll down to application list until they find last names starting from W, and start accepting from there.",
 }
 
 func ReturnRandomDevlinQuote() string {
