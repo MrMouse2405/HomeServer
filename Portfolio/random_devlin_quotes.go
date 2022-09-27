@@ -16,7 +16,7 @@ var RandomQuotes = []string{
 }
 
 func ReturnRandomDevlinQuote() string {
-	max := 8
+	max := 9
 	min := 0
 	return RandomQuotes[rand.Intn(max-min)+min]
 }
