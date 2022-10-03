@@ -12,6 +12,7 @@ var RandomQuotes = []string{
 	"Edward, Tristian, and Abdul are strong students. They dont need univeristy, university needs them.",
 	"I have a Asian Wife and a Dog",
 	"Universities Scroll down to application list until they find last names starting from W, and start accepting from there.",
+	"Devlin teaching gender studies? Thats never going to happen guys!",
 }
 
 func ReturnRandomDevlinQuote() string {
