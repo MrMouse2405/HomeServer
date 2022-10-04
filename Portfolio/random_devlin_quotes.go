@@ -13,6 +13,7 @@ var RandomQuotes = []string{
 	"You are no where near smart enough to skip this class",
 	"I have a Asian Wife and a Dog",
 	"Universities Scroll down to application list until they find last names starting from W, and start accepting from there.",
+	"Devlin teaching gender studies? Thats never going to happen guys!",
 }
 
 func ReturnRandomDevlinQuote() string {
