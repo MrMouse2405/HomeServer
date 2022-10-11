@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial">
+        <meta charset="utf-8" />
+        <title> Joojle Drive - Admin </title>
+    </head>
+    <body>
+        <h1> Joojle Drive Admin DashBoard </h1> <br>
+        <h2> Hello, Rick Astley!</h2>
+        <h4> Updates:</h4>
+        <li> Added Key Based Authentication</li>
+        <li> ඞ </li>
+        <br>
+        <h2> Data Base Access </h2>
+        <h4> Enter Key: </h4>
+        <input type="text" id="key"></input>
+        <h4> Enter User: </h4>
+        <input type="text" id="user"></input>
+        <br><br>
+        <button type="button" onclick="onClick()">Search</button>
+        <h4>Result:</h4>
+        <p id="result"></p>
+    <script>
+            /*
+
+                Note to Developers:
+                    For Debugging, or Testing
+                    Secret Keys can be found
+                    in /cs2/joojle-test-dropbox
+
+                
+            
+            */
+
+            const keyField = document.getElementById('key');
+            const userField = document.getElementById('user');
+            const resultField = document.getElementById('result');
+
+            function request_data(API_KEY,User) {
+                print(API_KEY,user)
+                return "works?"
+            }
+
+            function onClick() {
+                resultField.innerHTML = request_data(
+                    keyField.value,
+                    userField.value,
+                );
+            }
+
+
+        </script>
+    </body>
+</html>

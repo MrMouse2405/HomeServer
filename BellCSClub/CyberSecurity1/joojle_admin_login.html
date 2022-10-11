@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head> 
+    <meta name="viewport" content="width=device-width, initial">
+    <meta charset="utf-8" />
+    <title> Joojle Drive </title>
+</head>
+<body>
+    <h1> Joojle Drive </h1>
+    <h2> Admin Login Page: </h2>
+    <h4> Enter UserName: </h4>
+    <input type="text" id="username">
+    <h4> Enter Password: </h4>
+    <input type="password" id="password">
+    <br><br>
+    <button onclick="onClick()">Login</button>
+    <br><br>
+    <p id="status"></p>
+    <script>
+
+        const usernameField = document.getElementById("username")
+        const passwordField = document.getElementById("password")
+        const statusField = document.getElementById("status")
+
+        const username = "Rick Astley"
+        const password = "Never Gonna Give you up! Never Gonna Let you down!"
+    
+        function validate(Username,Password) {
+            return Username === username && Password === password
+        }
+    
+        function onClick() {
+            if (validate(usernameField.value,passwordField.value)) {
+                console.log("Success")
+                statusField.innerHTML = "Success! Redirecting!!!"
+            }
+            else {
+                console.log("Error")
+                statusField.innerHTML = "Error!"
+            }
+        }
+    
+    </script>
+</body>
+</html>
