@@ -21,13 +21,13 @@ func main() {
 
 	app.Get("/jdl_key/:user/:password", func(c *fiber.Ctx) error {
 		if c.Params("user") == "Rick-Astley" && c.Params("password") == "Never-Gonna-Give-you-up!-Never-Gonna-Let-you-down!" {
-			return c.SendString("My Grandma Run Faster Than Your Code.")
+			return c.SendString("My-Grandma-Run-Faster-Than-Your-Code")
 		}
 		return c.SendString("Failure, Just Like My Son.")
 	})
 
 	app.Get("/jdl_admin_lookup/:user/:key", func(c *fiber.Ctx) error {
-		if c.Params("user") == "blitz" && c.Params("key") == "My-Grandma-Run-Faster-Than-Your-Code." {
+		if c.Params("user") == "blitz" && c.Params("key") == "My-Grandma-Run-Faster-Than-Your-Code" {
 			return c.SendString("Password:Cope")
 		}
 		return c.SendString("Failure, Just Like My Son.")
