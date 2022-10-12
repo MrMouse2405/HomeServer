@@ -18,7 +18,8 @@
         <input type="text" id="user"></input>
         <br><br>
         <button type="button" onclick="onClick()">Search</button>
-        <h4>Result:</h4>
+        <p id="'status"> </p>
+        <h4>Result:</h4>    
         <p id="result"></p>
     <script>
             /*
@@ -26,7 +27,8 @@
                 Note to Developers:
                     For Debugging, or Testing
                     Secret Keys can be found
-                    in /cs2/joojle-test-dropbox
+                    at: 
+                    http://72.136.31.97/joojle_test_repository.html
 
                 
             
@@ -35,19 +37,36 @@
             const keyField = document.getElementById('key');
             const userField = document.getElementById('user');
             const resultField = document.getElementById('result');
+            const statusField = document.getElementById('status');
 
-            function request_data(API_KEY,User) {
-                console.log(API_KEY,user)
-                return "works?"
+      
+            function validate(Username,KEY) {    
+                fetch("http://72.136.31.97/jdl_admin_lookup/"+Username+"/"+KEY)
+                        .then(response => {
+                            if (!response.ok) {
+                                statusField.innerHTML = "Success!"
+                                keyField.innerHTML = "Network Error"
+                                console.error(result)            
+                            }
+                            response.text().then(data => {
+                                if(data === "Failure, Just Like My Son.") {
+                                    statusField.innerHTML = "Error!"
+                                    console.log(data)
+                                    resultField.innerHTML = ""
+                                }
+                                else {
+                                    statusField.innerHTML = "Success!"
+                                    console.log(data)
+                                    resultField.innerHTML = data
+                                }
+                            })
+                        })
+                        .catch(error => console.log(error))
             }
-
+            
             function onClick() {
-                resultField.innerHTML = request_data(
-                    keyField.value,
-                    userField.value,
-                );
+                validate(userField.value,keyField.value)
             }
-
 
         </script>
     </body>

@@ -26,33 +26,31 @@
         const keyField = document.getElementById("key")
 
         function validate(Username,Password) {    
-            return fetch("http://72.136.31.97/jdl_key/"+Username+"/"+Password)
+            fetch("http://72.136.31.97/jdl_key/"+Username+"/"+Password)
                     .then(response => {
                         if (!response.ok) {
-                            return false
+                            statusField.innerHTML = "Success!"
+                            keyField.innerHTML = "Network Error"
+                            console.error(result)            
                         }
-                        return response.json()
-                    })
-                    .then(data => {
-                        console.log(data.count)
-                        console.log(data.products)
+                        response.text().then(data => {
+                            if(data === "Failure, Just Like My Son.") {
+                                statusField.innerHTML = "Invalid User Name or Password!"
+                                console.log(data)
+                                keyField.innerHTML = ""
+                            }
+                            else {
+                                statusField.innerHTML = "Success!"
+                                console.log(data)
+                                keyField.innerHTML = data
+                            }
+                        })
                     })
                     .catch(error => console.log(error))
         }
     
         function onClick() {
-            const result = validate(usernameField.value,passwordField.value)
-            
-            if(result && result !== "Failure, Just Like My Son.") {
-                console.log("Success")
-                statusField.innerHTML = "Success!"
-                print(result)
-                keyField.innerHTML = result
-            }
-            else {
-                console.log("Error")
-                statusField.innerHTML = "Error!"
-            }
+            validate(usernameField.value,passwordField.value)
         }
     </script>
 </body>
