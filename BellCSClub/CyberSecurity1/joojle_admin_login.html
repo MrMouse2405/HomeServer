@@ -22,8 +22,8 @@
         const passwordField = document.getElementById("password")
         const statusField = document.getElementById("status")
 
-        const username = "Rick Astley"
-        const password = "Never Gonna Give you up! Never Gonna Let you down!"
+        const username = "Rick-Astley"
+        const password = "Never-Gonna-Give-you-up!-Never-Gonna-Let-you-down!"
     
         function validate(Username,Password) {
             return Username === username && Password === password
@@ -33,6 +33,7 @@
             if (validate(usernameField.value,passwordField.value)) {
                 console.log("Success")
                 statusField.innerHTML = "Success! Redirecting!!!"
+                window.location = "joojle_admin_home.html"
             }
             else {
                 console.log("Error")

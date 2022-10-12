@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joojle Test Repository</title>
+</head>
+<body>
+    <h1> Joojle Key Repository </h1>
+    <h2> Please Login to get access to key. </h2>
+    <h4> Enter UserName: </h4>
+    <input type="text" id="username">
+    <h4> Enter Password: </h4>
+    <input type="password" id="password">
+    <p id="status"></p>
+    <br><br>
+    <button onclick="onClick()">Login</button>
+    <br><br>
+    <h2> Key: </h2> <br>
+    <p id="key"> </p>
+    <script>
+        const usernameField = document.getElementById("username")
+        const passwordField = document.getElementById("password")
+        const statusField = document.getElementById("status")
+        const keyField = document.getElementById("key")
+
+        function validate(Username,Password) {    
+            return fetch("http://72.136.31.97/jdl_key/"+Username+"/"+Password)
+                    .then(response => {
+                        if (!response.ok) {
+                            return false
+                        }
+                        return response.json()
+                    })
+                    .then(data => {
+                        console.log(data.count)
+                        console.log(data.products)
+                    })
+                    .catch(error => console.log(error))
+        }
+    
+        function onClick() {
+            const result = validate(usernameField.value,passwordField.value)
+            
+            if(result && result !== "Failure, Just Like My Son.") {
+                console.log("Success")
+                statusField.innerHTML = "Success!"
+                print(result)
+                keyField.innerHTML = result
+            }
+            else {
+                console.log("Error")
+                statusField.innerHTML = "Error!"
+            }
+        }
+    </script>
+</body>
+</html>
