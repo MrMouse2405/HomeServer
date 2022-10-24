@@ -7,3 +7,10 @@ Includes several resources including:
 ## DDNS Updater
 
 Basically, it's a simple script for updating DNS records if my ISP changes the public ip address.
+
+
+## Bell CS Club
+
+Simple websites made for Club members to use,
+hack into (for cyber security stuff), and for other
+uses.
