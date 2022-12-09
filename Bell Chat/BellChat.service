@@ -1,0 +1,16 @@
+[Unit]
+Description = Bell Chat
+After = network.target
+
+[Service]
+Type = simple
+ExecStart = __PATH_TO_FILE__
+User = root
+Group = root
+Restart = on-failure
+SyslogIdentifier = Bell_Chat
+RestartSec = 5
+TimeoutStartSec = infinity
+
+[Install]
+WantedBy = multi-user.target

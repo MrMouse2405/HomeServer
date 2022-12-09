@@ -1,7 +1,0 @@
-flask
-flask_login
-flask_socketio
-flask_wtf
-flask_sqlalchemy
-passlib
-bleach

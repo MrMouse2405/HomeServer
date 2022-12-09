@@ -1,0 +1,16 @@
+{%macro displayField(fieldName, placeHolderValue) %}
+
+<div>
+    {{fieldName( class_ = 'form-control',placeholder=placeHolderValue,**kwargs)}}
+</div>
+    <div>
+        <ul>
+            {% for error in fieldName.errors %}
+            <li> {{error}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+<div>
+{% endmacro%}
+

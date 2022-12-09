@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BellChat</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            margin:4px;
+            padding:4px;
+        }
+        p,h3 {
+            margin:0;
+        }
+        #main-section{
+            width: 720px;
+            word-wrap: break-word;
+        }
+        #message-box{
+            position: relative;
+            height:360px;
+            overflow: hidden;
+        }
+        #display-message-section{
+            position: absolute;
+            padding-bottom:4px;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-section" class="box">
+        <div class="box">
+            <h3>BellChat</h3>
+            <p>SERVER CONNECTION: <span style="color:red" id="conn-status">DISCONNECTED</span></p>
+        </div>
+        <div class="box">
+            <p><b>Logged In As: {{ username }}</b></p>
+            <p id="serverinfo">Connected To: <span style="color:green" id="info-ip">undefined</span> | Server Name: <span style="color:green" id="info-servername">undefined</span> | Server Time: <span style="color:green" id="info-servertime">undefined</span></p>
+            <p id="serverinfo">Server Uptime: <span style="color:green" id="info-uptime">undefined</span> | Logged In Users: <span style="color:green" id="info-connected">undefined</span> | Server Version: <span style="color:green" id="info-version">undefined</span> | Security Level: <span style="color:green" id="info-security">undefined</span></p>
+        </div>
+        <div id="message-box" class="box">
+            <div id = "display-message-section">
+
+            </div>
+        </div>
+        <!-- Input message -->
+        <div id = "input-area" class="box">
+            <p>Send your message:</p>
+            <input type="text" size="32" id = "user_message" placeholder="Type here..." autocomplete="off">
+            <button type="button" id = "send_message">SEND</button>
+        </div>
+        <div class="box">
+            <p style="color:gray">Debug Server Config: <span id="serverconfig"></span></p>
+        </div>
+        <a href="/logout">LOGOUT</a>
+    </div>
+    <script>
+        const username = "{{ username }}"
+    </script>
+    <!-- SOCKETIO js  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" crossorigin="anonymous"></script>
+<!-- CUSTOM socketio  js  -->
+<script src="{{ url_for('static',filename='scripts/socketio.js')}}"></script>
+</body>
+</html>
