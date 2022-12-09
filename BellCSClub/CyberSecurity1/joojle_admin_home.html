@@ -28,7 +28,7 @@
                     For Debugging, or Testing
                     Secret Keys can be found
                     at: 
-                    http://72.136.31.97/joojle_test_repository.html
+                    "//"+location.host+"/joojle_test_repository.html"
 
                 
             
@@ -41,7 +41,7 @@
 
       
             function validate(Username,KEY) {    
-                fetch("http://72.136.31.97/jdl_admin_lookup/"+Username+"/"+KEY)
+                fetch("//"+location.host+"/jdl_admin_lookup/"+Username+"/"+KEY)
                         .then(response => {
                             if (!response.ok) {
                                 statusField.innerHTML = "Success!"

@@ -28,7 +28,7 @@
             const statusField = document.getElementById("status")
 
             function validate(username,password) {    
-                fetch("http://72.136.31.97/jdl_login/"+username+"/"+password)
+                fetch("//"+location.host+"/jdl_login/"+username+"/"+password)
                         .then(response => {
                             if (!response.ok) {
                                 statusField.innerHTML = "Success!"
