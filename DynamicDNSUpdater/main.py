@@ -15,9 +15,13 @@ import time
 
 # Make sure to set this environment variables. Read documentation to know what I am talking about:
 # https://api.cloudflare.com/#dns-records-for-a-zone-update-dns-record
+# zone id
 ZONE_IDENTIFIER = os.getenv('CLOUD_FLARE_ZONE_IDENTIFIER')
+# account id
 IDENTIFIER = os.getenv('CLOUD_FLARE_IDENTIFIER')
+# your account email
 CLOUD_FLARE_AUTHENTICATION_EMAIL = os.getenv('CLOUD_FLARE_AUTHENTICATION_EMAIL')
+# global api key
 CLOUD_FLARE_GLOBAL_AUTH_KEY = os.getenv('CLOUD_FLARE_GLOBAL_AUTH_KEY')
 
 # REPLACE THIS WITH YOUR RECORD NAME!!!
